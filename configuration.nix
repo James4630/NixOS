@@ -1,12 +1,21 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
       ./modules/homepage.nix
+      inputs.nix-minecraft.nixosModules.minecraft-servers
     ];
 
+  nixpkgs.overlays = [
+  	inputs.nix-minecraft.overlay
+  ];
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+               "minecraft-server"
+             ];
+  
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -268,6 +277,57 @@
   			MICROBIN_EDITABLE = true;
   			MICROBIN_SHOW_READ_STATS = true;
   			MICROBIN_ENABLE_READONLY = true;
+  		};
+  	};
+
+  	minecraft-servers = {
+  		enable = true;
+  		eula = true;
+  		openFirewall = true;
+
+  		servers = {
+  			survival_fabric = {
+  				enable = true;
+  				autoStart = true;
+  				restart = "no";
+  				package = pkgs.fabricServers.fabric-1_21_10;
+
+  				whitelist = {
+  					CreepedCraft = "14f2be87-7ab3-4662-9b0d-80ddfbef73a5";
+  				};
+  				operators = {
+  					SpatialComputing = {
+  						uuid = "ee2c78e1-11c7-4cb3-bebc-a3b2c119abf3";
+  						level = 4;
+  						bypassesPlayerLimit = true;
+  					};
+  				};
+  				serverProperties = {
+  					server-port = 25565;
+  					difficulty = "hard";
+  					gamemode = "survival";
+  					force-gamemode = true;
+  					level-seed = "42";
+  					simulation-distance = 8;
+  					view-distance = 16; #reduce if bandwith problems
+  					spawn-protection = 1;
+  					max-players = 20;
+  					motd = "Survival♥";
+  					white-list = true;
+  					#enable-rcon = true;
+  					#rcon.password = "James2008"; #lol i should put this in a secret
+  					#rcon.port = 25575; #default
+  					broadcast-rcon-to-ops = true;
+  				};
+
+  				jvmOpts = "-Xms8192M -Xmx8192M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+DisableExplicitGC ";
+  				
+  				symlinks = {
+  					mods = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
+  						FabricAPI = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/UuXf1NbU/fabric-api-0.138.0%2B1.21.10.jar"; sha512 = "2frq0x18fjr7aimlpn1mr0w16wmxzvc46wrcz4bf8kj7j84qcw91rvzshdpwhb34fj08155a8vb3m13mjp8gpjc6j2z11w2rm7hqgkj"; };
+  					});
+  				};
+  			};
   		};
   	};
   	
