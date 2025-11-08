@@ -316,8 +316,8 @@
   		serviceConfig = {
   			Type = "oneshot";
   			User = "root";
-  			WorkingDirectory = "/etc/nixos/pkgs/soularr";
-  			ExecStart = "${pkgs.sudo}/bin/sudo bash /etc/nixos/scripts/start-soularr.sh";
+  			WorkingDirectory = "/home/james/system-config/pkgs/soularr";
+  			ExecStart = "${pkgs.sudo}/bin/sudo bash /home/james/system-config/scripts/start-soularr.sh";
   			Environment = "PATH=/run/current-system/sw/bin:/run/current-system/sw/sbin:/run/current-system/profile/bin";
   		};
   	};
