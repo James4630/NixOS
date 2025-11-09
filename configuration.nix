@@ -303,7 +303,7 @@
   					};
   				};
   				serverProperties = {
-  					server-port = 25565;
+  					server-port = 25545;
   					difficulty = "hard";
   					gamemode = "survival";
   					force-gamemode = true;
@@ -345,6 +345,54 @@
   						#Name = pkgs.fetchurl { url = ""; sha512 = ""; };
   					});
   				};
+  			};
+
+  			clashcraft = {
+  				enable = true;
+  				autoStart = true;
+  				restart = "no";
+  				package = pkgs.fabricServers.fabric-1_21_10;
+
+  				operators = {
+  					SpatialComputing = {
+  						uuid = "ee2c78e1-11c7-4cb3-bebc-a3b2c119abf3";
+  						level = 4;
+  						bypassesPlayerLimit = true;
+  					};
+  				};
+  				serverProperties = {
+  					server-port = 25565;
+  					difficulty = "hard";
+  					gamemode = "adventure";
+  					force-gamemode = true;
+  					level-type = "flat";
+  					generator-settings = ''{"biome":"minecraft:plains","layers":[]}''
+  					function-permission-level = 4;
+  					simulation-distance = 4;
+  					view-distance = 4;
+  					max-players = 42;
+  					motd = "ClashCraft";
+  					white-list = false;
+  					enable-rcon = true;
+  					"rcon.password" = "James2008"; #lol i should put this in a secret
+  					"rcon.port" = 25577;
+  					"broadcast-rcon-to-ops" = true;
+  				};
+
+  				jvmOpts = "-Xms4096M -Xmx4096M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+DisableExplicitGC ";
+
+  				symlinks = {
+  					mods = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
+  						FabricAPI = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/UuXf1NbU/fabric-api-0.138.0+1.21.10.jar"; sha512 = "2frq0x18fjr7aimlpn1mr0w16wmxzvc46wrcz4bf8kj7j84qcw91rvzshdpwhb34fj08155a8vb3m13mjp8gpjc6j2z11w2rm7hqgkj"; };
+  						ScalableLux = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/Ps1zyz6x/versions/PV9KcrYQ/ScalableLux-0.1.6+fabric.c25518a-all.jar"; sha512 = "3kjl11p15xh80mk61ggz3q32zvc7nzynhh5hf2vpmf3fl8q3qhx10pdqyxqz71829dvirr8k77n95nvgm4b64jgf36xky2wwz0ib5bj"; };
+  						Clumps = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/Wnxd13zP/versions/8BikzIOh/Clumps-fabric-1.21.10-28.0.0.1.jar"; sha512 = "20m19acybva37zrqz9bhpadwx1p49654n2xx3vj4l1ik7nwsrxym72s9cjski3w9ryqgzjakpnjfb0im5xq32yrclrj52cf1pzh3237"; };
+  						C2Me = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/VSNURh3q/versions/uNick7oj/c2me-fabric-mc1.21.10-0.3.5.1.0.jar"; sha512 = "3dw81yqjkl3v6lbj1549y4srfzbxzclyaigmgkgrxm6xs3iw1sdhnwr3673hf6ai69q8p0jywk8c5shf2f71s69lrjzs45r5a3rq1sd"; };
+  						FerriteCore = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/uXXizFIs/versions/MGoveONm/ferritecore-8.0.2-fabric.jar"; sha512 = "3nbxsb8kmv95l3zz9xcxicsc4x7a02wplqfkxwb7gm5rgpd5xw9r80mrxpflhzyfbkp5k44smyvikzy3c6ym0zlyn0zdykd27xr0f4c"; };
+  						Lithium = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/oGKQMdyZ/lithium-fabric-0.20.0+mc1.21.10.jar"; sha512 = "393wcqdscp9dhpjnklacfvr8rcpzs17q4py6ap7igx8k8126ysmvn7h0inksg1a9ia2rp3bipyyrrnws4in1k1nv728mwznqw7hwp3m"; };
+  						#Name = pkgs.fetchurl { url = ""; sha512 = ""; };
+  					});
+  				};
+
   			};
   		};
   	};
