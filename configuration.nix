@@ -304,6 +304,7 @@
   				};
   				serverProperties = {
   					server-port = 25545;
+  					online-mode = false; #allow velocity to connect
   					difficulty = "hard";
   					gamemode = "survival";
   					force-gamemode = true;
@@ -343,6 +344,7 @@
   						BadPackets = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/ftdbN0KK/versions/bJjBP5HF/badpackets-fabric-0.10.2.jar"; sha512 = "08vh2fi9s6qjya1flfmkqyvfdvl11hh5zf8bw2h3sik97c7p90pyy8a04zca5hn3cn0aa059pa7pj0jd5nqv8y1bhl9ywk2xylzk1n2"; };
   						Balm = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/MBAkmtvl/versions/yJmabsVx/balm-fabric-1.21.10-21.10.7.jar"; sha512 = "2xq4gl7jpba8zkms2gdfka0x9ks4fa62ni7z8j25jary1j68jc7d4cvaa0kpkvz530qsn0csndzdri2vv25fbqygwrv4i7vy7dcmcpk"; };
   						Collective = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/e0M1UDsY/versions/A0CFMmGr/collective-1.21.10-8.13.jar"; sha512 = "0wy21xaic50mpaya2mmxhv40c2p8s50d5qr5zs66xak1c7bxqj7dfnnipfz0fpf4wnrfrdy9pg080mrzkqy63dmi339iaw57ig4ym01"; };
+  						FabricProxyLite = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/8dI2tmqs/versions/nR8AIdvx/FabricProxy-Lite-2.11.0.jar"; sha512 = "c2e1d9279f6f19a561f934b846540b28a033586b4b419b9c1aa27ac43ffc8fad2ce60e212a15406e5fa3907ff5ecbe5af7a5edb183a9ee6737a41e464aec1375"; };
   						#Name = pkgs.fetchurl { url = ""; sha512 = ""; };
   					});
   				};
@@ -363,6 +365,7 @@
   				};
   				serverProperties = {
   					server-port = 25555;
+  					online-mode = false; #allow velocity to connect
   					difficulty = "hard";
   					gamemode = "adventure";
   					force-gamemode = true;
@@ -391,11 +394,51 @@
   						FerriteCore = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/uXXizFIs/versions/MGoveONm/ferritecore-8.0.2-fabric.jar"; sha512 = "3nbxsb8kmv95l3zz9xcxicsc4x7a02wplqfkxwb7gm5rgpd5xw9r80mrxpflhzyfbkp5k44smyvikzy3c6ym0zlyn0zdykd27xr0f4c"; };
   						Lithium = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/oGKQMdyZ/lithium-fabric-0.20.0+mc1.21.10.jar"; sha512 = "393wcqdscp9dhpjnklacfvr8rcpzs17q4py6ap7igx8k8126ysmvn7h0inksg1a9ia2rp3bipyyrrnws4in1k1nv728mwznqw7hwp3m"; };
   						XaerosWorldMap = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/NcUtCpym/versions/81Qc21E2/XaerosWorldMap_1.39.17_Fabric_1.21.9.jar"; sha512 = "39d0j50rlprv6mga4p8l3085d35pcsxiygz11sl0kr1qk4s73nypac84idwf9m9njgqgwrpnxxs7047lshsqxdqx6y3nhphd9hps3g6"; };
+  						FabricProxyLite = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/8dI2tmqs/versions/nR8AIdvx/FabricProxy-Lite-2.11.0.jar"; sha512 = "c2e1d9279f6f19a561f934b846540b28a033586b4b419b9c1aa27ac43ffc8fad2ce60e212a15406e5fa3907ff5ecbe5af7a5edb183a9ee6737a41e464aec1375"; };
   						#Name = pkgs.fetchurl { url = ""; sha512 = ""; };
   					});
   				};
   			};
 
+  			lobby = {
+  				enable = true;
+  				autoStart = false; #started by velocity
+  				package = pkgs.fabricServers.fabric-1_21_10;
+
+  				operators = { SpatialComputing = { uuid = "ee2c78e1-11c7-4cb3-bebc-a3b2c119abf3"; level = 4; bypassesPlayerLimit = true; }; };
+  				
+  				serverProperties = {
+  					server-port = 25535;
+  					online-mode = false; #allow velocity to connect
+  					difficulty = "hard";
+  					gamemode = "adventure";
+  					force-gamemode = true;
+  					level-type = "flat";
+  					generator-settings = ''{"biome":"minecraft:plains","layers":[]}'';
+  					function-permission-level = 4;
+  					simulation-distance = 6;
+  					view-distance = 6;
+  					max-players = 42;
+  					motd = "Kirby Network";
+  				};
+  				
+  				jvmOpts = "-Xms2048M -Xmx2048M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+DisableExplicitGC ";
+
+  				symlinks = {
+  					mods = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
+  						FabricAPI = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/UuXf1NbU/fabric-api-0.138.0+1.21.10.jar"; sha512 = "2frq0x18fjr7aimlpn1mr0w16wmxzvc46wrcz4bf8kj7j84qcw91rvzshdpwhb34fj08155a8vb3m13mjp8gpjc6j2z11w2rm7hqgkj"; };
+  						ScalableLux = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/Ps1zyz6x/versions/PV9KcrYQ/ScalableLux-0.1.6+fabric.c25518a-all.jar"; sha512 = "3kjl11p15xh80mk61ggz3q32zvc7nzynhh5hf2vpmf3fl8q3qhx10pdqyxqz71829dvirr8k77n95nvgm4b64jgf36xky2wwz0ib5bj"; };
+  						C2Me = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/VSNURh3q/versions/uNick7oj/c2me-fabric-mc1.21.10-0.3.5.1.0.jar"; sha512 = "3dw81yqjkl3v6lbj1549y4srfzbxzclyaigmgkgrxm6xs3iw1sdhnwr3673hf6ai69q8p0jywk8c5shf2f71s69lrjzs45r5a3rq1sd"; };
+  						FerriteCore = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/uXXizFIs/versions/MGoveONm/ferritecore-8.0.2-fabric.jar"; sha512 = "3nbxsb8kmv95l3zz9xcxicsc4x7a02wplqfkxwb7gm5rgpd5xw9r80mrxpflhzyfbkp5k44smyvikzy3c6ym0zlyn0zdykd27xr0f4c"; };
+  						Lithium = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/oGKQMdyZ/lithium-fabric-0.20.0+mc1.21.10.jar"; sha512 = "393wcqdscp9dhpjnklacfvr8rcpzs17q4py6ap7igx8k8126ysmvn7h0inksg1a9ia2rp3bipyyrrnws4in1k1nv728mwznqw7hwp3m"; };
+  						XaerosWorldMap = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/NcUtCpym/versions/81Qc21E2/XaerosWorldMap_1.39.17_Fabric_1.21.9.jar"; sha512 = "39d0j50rlprv6mga4p8l3085d35pcsxiygz11sl0kr1qk4s73nypac84idwf9m9njgqgwrpnxxs7047lshsqxdqx6y3nhphd9hps3g6"; };
+  						FabricProxyLite = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/8dI2tmqs/versions/nR8AIdvx/FabricProxy-Lite-2.11.0.jar"; sha512 = "c2e1d9279f6f19a561f934b846540b28a033586b4b419b9c1aa27ac43ffc8fad2ce60e212a15406e5fa3907ff5ecbe5af7a5edb183a9ee6737a41e464aec1375"; };
+  						#Name = pkgs.fetchurl { url = ""; sha512 = ""; };
+  					});
+  				};
+
+  			};
+  			
   			proxy = {
   				enable = true;
   				autoStart = true;
