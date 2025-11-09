@@ -309,7 +309,7 @@
   					force-gamemode = true;
   					level-seed = "42";
   					simulation-distance = 8;
-  					view-distance = 16; #reduce if bandwith problems
+  					view-distance = 8; #low to save bandwith; DH sends 256 chunks distance as LODs
   					spawn-protection = 1;
   					max-players = 20;
   					motd = "Survival♥";
