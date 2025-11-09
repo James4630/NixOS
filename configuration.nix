@@ -314,10 +314,10 @@
   					max-players = 20;
   					motd = "Survival♥";
   					white-list = true;
-  					#enable-rcon = true;
-  					#rcon.password = "James2008"; #lol i should put this in a secret
-  					#rcon.port = 25575; #default
-  					broadcast-rcon-to-ops = true;
+  					enable-rcon = true;
+  					"rcon.password" = "James2008"; #lol i should put this in a secret
+  					"rcon.port" = 25575; #default
+  					"broadcast-rcon-to-ops" = true;
   				};
 
   				jvmOpts = "-Xms8192M -Xmx8192M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+DisableExplicitGC ";
