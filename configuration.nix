@@ -371,6 +371,7 @@
   					force-gamemode = true;
   					level-type = "flat";
   					generator-settings = ''{"biome":"minecraft:plains","layers":[]}'';
+  					generate-structures = false;
   					function-permission-level = 4;
   					simulation-distance = 4;
   					view-distance = 4;
@@ -415,6 +416,7 @@
   					force-gamemode = true;
   					level-type = "flat";
   					generator-settings = ''{"biome":"minecraft:plains","layers":[]}'';
+  					generate-structures = false;
   					function-permission-level = 4;
   					simulation-distance = 6;
   					view-distance = 6;
