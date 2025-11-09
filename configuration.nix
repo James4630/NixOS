@@ -13,8 +13,8 @@
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-               "minecraft-server"
-             ];
+  	"minecraft-server"
+  ];
   
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -324,7 +324,25 @@
   				
   				symlinks = {
   					mods = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues {
-  						FabricAPI = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/UuXf1NbU/fabric-api-0.138.0%2B1.21.10.jar"; sha512 = "2frq0x18fjr7aimlpn1mr0w16wmxzvc46wrcz4bf8kj7j84qcw91rvzshdpwhb34fj08155a8vb3m13mjp8gpjc6j2z11w2rm7hqgkj"; };
+  						FabricAPI = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/UuXf1NbU/fabric-api-0.138.0+1.21.10.jar"; sha512 = "2frq0x18fjr7aimlpn1mr0w16wmxzvc46wrcz4bf8kj7j84qcw91rvzshdpwhb34fj08155a8vb3m13mjp8gpjc6j2z11w2rm7hqgkj"; };
+  						JustPlayerHeads = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/YdVBZMNR/versions/XSCScrV7/justplayerheads-1.21.10-4.3.jar"; sha512 = "1zgf6apfgxpb6snj8vbm6hykb3jc1n7h3nlymdk3lqqyar9d3kpg71a55pbphby90g7fmv0cypn47rzr9mj3gs5g0n4086mqm55fnq6"; };
+  						JustMobHeads = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/jzTUm9hE/versions/XBRiGW8q/justmobheads-1.21.10-8.9.jar"; sha512 = "3y63apg3gw3nswh23zhf7a43yp14n9zprmcgbg1rjsvr3zrvmmpzm65g236xw0s2271ld1agxajj9m71s8x5gwsav2f3r9a0wh7fjg5"; };
+  						InvisibleFrames = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/QD87oMUf/versions/S48QrgU7/invisibleframes-1.5.0+1.21.6.jar"; sha512 = "1w99h02l9yja7q62d3l6h2f49irif74s1fm4isz889ax626zr4p3gw37sy62p0fw3kn7fhh40c67bm3gzqgkr2xpac9ah7z29z3lxid"; };
+  						ScalableLux = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/Ps1zyz6x/versions/PV9KcrYQ/ScalableLux-0.1.6+fabric.c25518a-all.jar"; sha512 = "3kjl11p15xh80mk61ggz3q32zvc7nzynhh5hf2vpmf3fl8q3qhx10pdqyxqz71829dvirr8k77n95nvgm4b64jgf36xky2wwz0ib5bj"; };
+  						Chunky = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/fALzjamp/versions/kkEljQ4R/Chunky-Fabric-1.4.51.jar"; sha512 = "3lv6whg1v3na21v5mkgprv4g93bx2n8nbdc51l3xwkalr62h3acg28wa3ggh8hsf5hjcvcwl27hmrgism5v34zb0brcv2k1wxy1xgx9"; };
+  						AlternateCurrent = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/r0v8vy1s/versions/FY6xclLZ/alternate-current-mc1.21.9-1.9.0.jar"; sha512 = "0qa50wa2gc5m5rm62907p88sk9jf18pqvv83cqnfnlx11xcirn7nr087sh3d1fdcyn1ni6fcdmvgimslll6yi7mskj5z8a04j6l54rx"; };
+  						Clumps = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/Wnxd13zP/versions/8BikzIOh/Clumps-fabric-1.21.10-28.0.0.1.jar"; sha512 = "20m19acybva37zrqz9bhpadwx1p49654n2xx3vj4l1ik7nwsrxym72s9cjski3w9ryqgzjakpnjfb0im5xq32yrclrj52cf1pzh3237"; };
+  						C2Me = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/VSNURh3q/versions/uNick7oj/c2me-fabric-mc1.21.10-0.3.5.1.0.jar"; sha512 = "3dw81yqjkl3v6lbj1549y4srfzbxzclyaigmgkgrxm6xs3iw1sdhnwr3673hf6ai69q8p0jywk8c5shf2f71s69lrjzs45r5a3rq1sd"; };
+  						DistantHorizons = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/uCdwusMi/versions/9Y10ZuWP/DistantHorizons-2.3.6-b-1.21.10-fabric-neoforge.jar"; sha512 = "3ya2x30aickp5iypr0rrbh1gj2smwbg49mcgp41cj6ijxlnhxcx4z17xynzv8xbj5pbaqf50zs9ay7ad0p3zyprlm9d3432xjvp06qv"; };
+  						NetherPortalFix = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/nPZr02ET/versions/EQ03E7hB/netherportalfix-fabric-1.21.10-21.10.1.jar"; sha512 = "2c9dm0p3yba9a9nr5qnrlajifp544hcjm9rkxmfp191zbza6qs22gqw58r73q194qf1r42lsaqs1dfdk5hljjks934g54yfqilqb3bf"; };
+  						WTHIT = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/6AQIaxuO/versions/4ytH5lRo/wthit-1.21.10-fabric-17.3.2.jar"; sha512 = "02ngc0vwrk8psq41ys4sm6p7rrmn1jlry05rpb3p8m7xs1iarm057yy20aks92fs323ang2gdw67pjq2qljqxyapwdxv79vvr8wci8y"; };
+  						AppleSkin = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/EsAfCjCV/versions/8sbiz1lS/appleskin-fabric-mc1.21.9-3.0.7.jar"; sha512 = "224a3qhcq3a5z5cd3q8pcxlhzi81c89k51xxdbqifjrscmdc72hwrkiw5s9253vck58bd5y903ccis1amqwvcblryvwsh4il2sd1l3r"; };
+  						FerriteCore = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/uXXizFIs/versions/MGoveONm/ferritecore-8.0.2-fabric.jar"; sha512 = "3nbxsb8kmv95l3zz9xcxicsc4x7a02wplqfkxwb7gm5rgpd5xw9r80mrxpflhzyfbkp5k44smyvikzy3c6ym0zlyn0zdykd27xr0f4c"; };
+  						Lithium = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/oGKQMdyZ/lithium-fabric-0.20.0+mc1.21.10.jar"; sha512 = "393wcqdscp9dhpjnklacfvr8rcpzs17q4py6ap7igx8k8126ysmvn7h0inksg1a9ia2rp3bipyyrrnws4in1k1nv728mwznqw7hwp3m"; };
+  						BadPackets = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/ftdbN0KK/versions/bJjBP5HF/badpackets-fabric-0.10.2.jar"; sha512 = "08vh2fi9s6qjya1flfmkqyvfdvl11hh5zf8bw2h3sik97c7p90pyy8a04zca5hn3cn0aa059pa7pj0jd5nqv8y1bhl9ywk2xylzk1n2"; };
+  						Balm = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/MBAkmtvl/versions/yJmabsVx/balm-fabric-1.21.10-21.10.7.jar"; sha512 = "2xq4gl7jpba8zkms2gdfka0x9ks4fa62ni7z8j25jary1j68jc7d4cvaa0kpkvz530qsn0csndzdri2vv25fbqygwrv4i7vy7dcmcpk"; };
+  						Collective = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/e0M1UDsY/versions/A0CFMmGr/collective-1.21.10-8.13.jar"; sha512 = "0wy21xaic50mpaya2mmxhv40c2p8s50d5qr5zs66xak1c7bxqj7dfnnipfz0fpf4wnrfrdy9pg080mrzkqy63dmi339iaw57ig4ym01"; };
+  						#Name = pkgs.fetchurl { url = ""; sha512 = ""; };
   					});
   				};
   			};
