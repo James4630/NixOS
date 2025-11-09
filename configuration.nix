@@ -516,10 +516,19 @@
   	};
   };
 
-  security = {
-  	sudo.extraConfig = ''
+  security.sudo = {
+  	extraConfig = ''
   	  Defaults env_keep += "BEETSDIR"
   	'';
+  	extraRules = [
+  		{
+  			users = [ "minecraft" ];
+  			commands = [
+  				{ command = "/bin/systemctl start minecraft-server-*.service"; options = [ "NOPASSWD" ]; }
+  				{ command = "/bin/systemctl stop minecraft-server-*.service"; options = [ "NOPASSWD" ]; }
+  			];
+  		}
+  	];
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 25565 25566 25575 25577 ];
