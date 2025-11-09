@@ -283,12 +283,12 @@
   	minecraft-servers = {
   		enable = true;
   		eula = true;
-  		openFirewall = true;
+  		openFirewall = false;
 
   		servers = {
   			survival_fabric = {
   				enable = true;
-  				autoStart = true;
+  				autoStart = false; #started by velocity
   				restart = "no";
   				package = pkgs.fabricServers.fabric-1_21_10;
 
@@ -337,6 +337,7 @@
   						NetherPortalFix = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/nPZr02ET/versions/EQ03E7hB/netherportalfix-fabric-1.21.10-21.10.1.jar"; sha512 = "2c9dm0p3yba9a9nr5qnrlajifp544hcjm9rkxmfp191zbza6qs22gqw58r73q194qf1r42lsaqs1dfdk5hljjks934g54yfqilqb3bf"; };
   						WTHIT = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/6AQIaxuO/versions/4ytH5lRo/wthit-1.21.10-fabric-17.3.2.jar"; sha512 = "02ngc0vwrk8psq41ys4sm6p7rrmn1jlry05rpb3p8m7xs1iarm057yy20aks92fs323ang2gdw67pjq2qljqxyapwdxv79vvr8wci8y"; };
   						AppleSkin = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/EsAfCjCV/versions/8sbiz1lS/appleskin-fabric-mc1.21.9-3.0.7.jar"; sha512 = "224a3qhcq3a5z5cd3q8pcxlhzi81c89k51xxdbqifjrscmdc72hwrkiw5s9253vck58bd5y903ccis1amqwvcblryvwsh4il2sd1l3r"; };
+  						XaerosWorldMap = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/NcUtCpym/versions/81Qc21E2/XaerosWorldMap_1.39.17_Fabric_1.21.9.jar"; sha512 = "39d0j50rlprv6mga4p8l3085d35pcsxiygz11sl0kr1qk4s73nypac84idwf9m9njgqgwrpnxxs7047lshsqxdqx6y3nhphd9hps3g6"; };
   						FerriteCore = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/uXXizFIs/versions/MGoveONm/ferritecore-8.0.2-fabric.jar"; sha512 = "3nbxsb8kmv95l3zz9xcxicsc4x7a02wplqfkxwb7gm5rgpd5xw9r80mrxpflhzyfbkp5k44smyvikzy3c6ym0zlyn0zdykd27xr0f4c"; };
   						Lithium = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/oGKQMdyZ/lithium-fabric-0.20.0+mc1.21.10.jar"; sha512 = "393wcqdscp9dhpjnklacfvr8rcpzs17q4py6ap7igx8k8126ysmvn7h0inksg1a9ia2rp3bipyyrrnws4in1k1nv728mwznqw7hwp3m"; };
   						BadPackets = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/ftdbN0KK/versions/bJjBP5HF/badpackets-fabric-0.10.2.jar"; sha512 = "08vh2fi9s6qjya1flfmkqyvfdvl11hh5zf8bw2h3sik97c7p90pyy8a04zca5hn3cn0aa059pa7pj0jd5nqv8y1bhl9ywk2xylzk1n2"; };
@@ -349,7 +350,7 @@
 
   			clashcraft = {
   				enable = true;
-  				autoStart = true;
+  				autoStart = false; #started by velocity
   				restart = "no";
   				package = pkgs.fabricServers.fabric-1_21_10;
 
@@ -361,12 +362,12 @@
   					};
   				};
   				serverProperties = {
-  					server-port = 25565;
+  					server-port = 25555;
   					difficulty = "hard";
   					gamemode = "adventure";
   					force-gamemode = true;
   					level-type = "flat";
-  					generator-settings = ''{"biome":"minecraft:plains","layers":[]}''
+  					generator-settings = ''{"biome":"minecraft:plains","layers":[]}'';
   					function-permission-level = 4;
   					simulation-distance = 4;
   					view-distance = 4;
@@ -389,10 +390,17 @@
   						C2Me = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/VSNURh3q/versions/uNick7oj/c2me-fabric-mc1.21.10-0.3.5.1.0.jar"; sha512 = "3dw81yqjkl3v6lbj1549y4srfzbxzclyaigmgkgrxm6xs3iw1sdhnwr3673hf6ai69q8p0jywk8c5shf2f71s69lrjzs45r5a3rq1sd"; };
   						FerriteCore = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/uXXizFIs/versions/MGoveONm/ferritecore-8.0.2-fabric.jar"; sha512 = "3nbxsb8kmv95l3zz9xcxicsc4x7a02wplqfkxwb7gm5rgpd5xw9r80mrxpflhzyfbkp5k44smyvikzy3c6ym0zlyn0zdykd27xr0f4c"; };
   						Lithium = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/oGKQMdyZ/lithium-fabric-0.20.0+mc1.21.10.jar"; sha512 = "393wcqdscp9dhpjnklacfvr8rcpzs17q4py6ap7igx8k8126ysmvn7h0inksg1a9ia2rp3bipyyrrnws4in1k1nv728mwznqw7hwp3m"; };
+  						XaerosWorldMap = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/NcUtCpym/versions/81Qc21E2/XaerosWorldMap_1.39.17_Fabric_1.21.9.jar"; sha512 = "39d0j50rlprv6mga4p8l3085d35pcsxiygz11sl0kr1qk4s73nypac84idwf9m9njgqgwrpnxxs7047lshsqxdqx6y3nhphd9hps3g6"; };
   						#Name = pkgs.fetchurl { url = ""; sha512 = ""; };
   					});
   				};
+  			};
 
+  			proxy = {
+  				enable = true;
+  				autoStart = true;
+  				#restart = "no";
+  				package = pkgs.velocityServers.velocity;
   			};
   		};
   	};
@@ -468,7 +476,7 @@
   	'';
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 25565 25566 25575 25577 ];
 
 
   system.stateVersion = "25.05"; # Did you read the comment?
