@@ -289,7 +289,6 @@
   			survival_fabric = {
   				enable = true;
   				autoStart = false; #started by velocity
-  				restart = "no";
   				package = pkgs.fabricServers.fabric-1_21_10;
 
   				whitelist = {
@@ -353,7 +352,6 @@
   			clashcraft = {
   				enable = true;
   				autoStart = false; #started by velocity
-  				restart = "no";
   				package = pkgs.fabricServers.fabric-1_21_10;
 
   				operators = {
@@ -379,9 +377,9 @@
   					motd = "ClashCraft";
   					white-list = false;
   					enable-rcon = true;
-  					"rcon.password" = "James2008"; #lol i should put this in a secret
-  					"rcon.port" = 25577;
-  					"broadcast-rcon-to-ops" = true;
+  					#"rcon.password" = "James2008"; #lol i should put this in a secret
+  					#"rcon.port" = 25576;
+  					#"broadcast-rcon-to-ops" = true;
   				};
 
   				jvmOpts = "-Xms4096M -Xmx4096M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+DisableExplicitGC ";
@@ -444,7 +442,6 @@
   			proxy = {
   				enable = true;
   				autoStart = true;
-  				#restart = "no";
   				package = pkgs.velocityServers.velocity;
   				jvmOpts = "-XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15";
   			};
@@ -540,7 +537,7 @@
 
   		    var allowedServices = [
   		      "minecraft-server-lobby.service",
-  		      "minecraft-server-survival.service",
+  		      "minecraft-server-survival_fabric.service",
   		      "minecraft-server-clashcraft.service"
   		    ];
 
