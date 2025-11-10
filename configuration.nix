@@ -344,7 +344,7 @@
   						Balm = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/MBAkmtvl/versions/yJmabsVx/balm-fabric-1.21.10-21.10.7.jar"; sha512 = "2xq4gl7jpba8zkms2gdfka0x9ks4fa62ni7z8j25jary1j68jc7d4cvaa0kpkvz530qsn0csndzdri2vv25fbqygwrv4i7vy7dcmcpk"; };
   						Collective = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/e0M1UDsY/versions/A0CFMmGr/collective-1.21.10-8.13.jar"; sha512 = "0wy21xaic50mpaya2mmxhv40c2p8s50d5qr5zs66xak1c7bxqj7dfnnipfz0fpf4wnrfrdy9pg080mrzkqy63dmi339iaw57ig4ym01"; };
   						FabricProxyLite = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/8dI2tmqs/versions/nR8AIdvx/FabricProxy-Lite-2.11.0.jar"; sha512 = "c2e1d9279f6f19a561f934b846540b28a033586b4b419b9c1aa27ac43ffc8fad2ce60e212a15406e5fa3907ff5ecbe5af7a5edb183a9ee6737a41e464aec1375"; };
-  						#Name = pkgs.fetchurl { url = ""; sha512 = ""; };
+  						VoiceChat = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/9eGKb6K1/versions/BjR2lc4k/voicechat-fabric-1.21.10-2.6.6.jar"; sha512 = "fc0b838a0906ddafeabf9db3b459d4226a2f06458443ee1dee44d937e5896f0d8d3e7c7bbc2a93ea74b4665f37249e7da719bbabf8449c756d2a49116be61197"; };
   					});
   				};
   			};
@@ -394,7 +394,7 @@
   						Lithium = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/oGKQMdyZ/lithium-fabric-0.20.0+mc1.21.10.jar"; sha512 = "393wcqdscp9dhpjnklacfvr8rcpzs17q4py6ap7igx8k8126ysmvn7h0inksg1a9ia2rp3bipyyrrnws4in1k1nv728mwznqw7hwp3m"; };
   						XaerosWorldMap = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/NcUtCpym/versions/81Qc21E2/XaerosWorldMap_1.39.17_Fabric_1.21.9.jar"; sha512 = "39d0j50rlprv6mga4p8l3085d35pcsxiygz11sl0kr1qk4s73nypac84idwf9m9njgqgwrpnxxs7047lshsqxdqx6y3nhphd9hps3g6"; };
   						FabricProxyLite = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/8dI2tmqs/versions/nR8AIdvx/FabricProxy-Lite-2.11.0.jar"; sha512 = "c2e1d9279f6f19a561f934b846540b28a033586b4b419b9c1aa27ac43ffc8fad2ce60e212a15406e5fa3907ff5ecbe5af7a5edb183a9ee6737a41e464aec1375"; };
-  						#Name = pkgs.fetchurl { url = ""; sha512 = ""; };
+  						VoiceChat = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/9eGKb6K1/versions/BjR2lc4k/voicechat-fabric-1.21.10-2.6.6.jar"; sha512 = "fc0b838a0906ddafeabf9db3b459d4226a2f06458443ee1dee44d937e5896f0d8d3e7c7bbc2a93ea74b4665f37249e7da719bbabf8449c756d2a49116be61197"; };
   					});
   				};
   			};
@@ -433,7 +433,7 @@
   						Lithium = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/oGKQMdyZ/lithium-fabric-0.20.0+mc1.21.10.jar"; sha512 = "393wcqdscp9dhpjnklacfvr8rcpzs17q4py6ap7igx8k8126ysmvn7h0inksg1a9ia2rp3bipyyrrnws4in1k1nv728mwznqw7hwp3m"; };
   						XaerosWorldMap = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/NcUtCpym/versions/81Qc21E2/XaerosWorldMap_1.39.17_Fabric_1.21.9.jar"; sha512 = "39d0j50rlprv6mga4p8l3085d35pcsxiygz11sl0kr1qk4s73nypac84idwf9m9njgqgwrpnxxs7047lshsqxdqx6y3nhphd9hps3g6"; };
   						FabricProxyLite = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/8dI2tmqs/versions/nR8AIdvx/FabricProxy-Lite-2.11.0.jar"; sha512 = "c2e1d9279f6f19a561f934b846540b28a033586b4b419b9c1aa27ac43ffc8fad2ce60e212a15406e5fa3907ff5ecbe5af7a5edb183a9ee6737a41e464aec1375"; };
-  						#Name = pkgs.fetchurl { url = ""; sha512 = ""; };
+  						VoiceChat = pkgs.fetchurl { url = "https://cdn.modrinth.com/data/9eGKb6K1/versions/BjR2lc4k/voicechat-fabric-1.21.10-2.6.6.jar"; sha512 = "fc0b838a0906ddafeabf9db3b459d4226a2f06458443ee1dee44d937e5896f0d8d3e7c7bbc2a93ea74b4665f37249e7da719bbabf8449c756d2a49116be61197"; };
   					});
   				};
 
