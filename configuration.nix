@@ -516,20 +516,50 @@
   	};
   };
 
-  security.sudo = {
-  	extraConfig = ''
-  	  Defaults env_keep += "BEETSDIR"
-  	'';
-  	extraRules = [
-  		{
-  			users = [ "minecraft" ];
-  			commands = [
-  				{ command = "/bin/systemctl start minecraft-server-*.service"; options = [ "NOPASSWD" ]; }
-  				{ command = "/bin/systemctl stop minecraft-server-*.service"; options = [ "NOPASSWD" ]; }
-  			];
-  		}
-  	];
+  security = {
+  	sudo = {
+  		extraConfig = ''
+  		  Defaults env_keep += "BEETSDIR"
+  		'';
+  		extraRules = [
+  			{
+  				users = [ "minecraft" ];
+  				commands = [
+  					{ command = "/bin/systemctl start minecraft-server-*.service"; options = [ "NOPASSWD" ]; }
+  					{ command = "/bin/systemctl stop minecraft-server-*.service"; options = [ "NOPASSWD" ]; }
+  				];
+  			}
+  		];
+  	};
+  	
+  	polkit = {
+  		enable = true;
+  		extraConfig = ''
+  		  polkit.addRule(function(action, subject) {
+  		    var allowedUser = "minecraft";
+
+  		    var allowedServices = [
+  		      "minecraft-server-lobby.service",
+  		      "minecraft-server-survival.service",
+  		      "minecraft-server-clashcraft.service"
+  		    ];
+
+  		    if (
+  		      subject.user == allowedUser &&
+  		      action.id == "org.freedesktop.systemd1.manage-units"
+  		    ) {
+  		      var unit = action.lookup("unit");
+
+  		      if (allowedServices.indexOf(unit) >= 0) {
+  		        return polkit.Result.YES;
+  		      }
+  		    }
+  		    return polkit.Result.NOT_HANDLED;
+  		  });
+  		'';
+  	};
   };
+
 
   networking.firewall.allowedTCPPorts = [ 80 443 25565 25566 25575 25577 ];
 
