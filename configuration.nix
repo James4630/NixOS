@@ -29,7 +29,7 @@
 
   users.users.james = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "minecraft" ];
     packages = with pkgs; [
       tree
     ];
