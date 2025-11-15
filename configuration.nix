@@ -289,6 +289,7 @@
   			survival_fabric = {
   				enable = true;
   				autoStart = false; #started by velocity
+  				restart = "no";
   				package = pkgs.fabricServers.fabric-1_21_10;
 
   				whitelist = {
@@ -352,6 +353,7 @@
   			clashcraft = {
   				enable = true;
   				autoStart = false; #started by velocity
+  				restart = "no";
   				package = pkgs.fabricServers.fabric-1_21_10;
 
   				operators = {
@@ -402,6 +404,7 @@
   			lobby = {
   				enable = true;
   				autoStart = false; #started by velocity
+  				restart = "no";
   				package = pkgs.fabricServers.fabric-1_21_10;
 
   				operators = { SpatialComputing = { uuid = "ee2c78e1-11c7-4cb3-bebc-a3b2c119abf3"; level = 4; bypassesPlayerLimit = true; }; };
@@ -442,6 +445,7 @@
   			proxy = {
   				enable = true;
   				autoStart = true;
+  				restart = "no";
   				package = pkgs.velocityServers.velocity;
   				jvmOpts = "-XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15";
   			};
