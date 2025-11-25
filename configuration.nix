@@ -200,11 +200,11 @@
   			#CoverArtPriority = "cover.*";
   			#ImageCacheSize = "0"; #temporary disable cache (does this remove old cache?)
 
-  			Backup = {
-  				Path = "/mnt/backup/appdata/navidrome";
-  				Count = 3;
-  				Schedule = "0 0 * * *";
-  			};
+  			#Backup = {
+  			#	Path = "/mnt/backup/appdata/navidrome";
+  			#	Count = 3;
+  			#	Schedule = "0 0 * * *";
+  			#};
 
   			LastFM.ApiKey = "253a63edea1595974207918025405555";
   			LastFM.Secret = "16b6a2f036afe5d88e0da94b52c8902d";
@@ -497,11 +497,6 @@
   	lidarr = {
   		serviceConfig = (readWriteOverwrite.serviceConfig // {
   			ReadWritePaths = lib.mkForce [ "/mnt/storage/slskd/downloads" ];
-  		});
-  	};
-  	navidrome = {
-  		serviceConfig = (readWriteOverwrite.serviceConfig // {
-  			ReadWritePaths = lib.mkForce [ "/mnt/backup/appdata/navidrome" ];
   		});
   	};
   	"soularr" = {
