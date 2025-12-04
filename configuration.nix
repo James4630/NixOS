@@ -364,6 +364,7 @@
 
   				whitelist = {
   					CreepedCraft = "14f2be87-7ab3-4662-9b0d-80ddfbef73a5";
+  					flycraft2000 = "51a935e7-6524-4177-bd80-1504aa3dc31b";
   				};
   				operators = {
   					SpatialComputing = {
