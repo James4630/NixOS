@@ -612,6 +612,7 @@
   		    var allowedServices = [
   		      "minecraft-server-lobby.service",
   		      "minecraft-server-survival_fabric.service",
+  		      "minecraft-server-forever_world.service",
   		      "minecraft-server-clashcraft.service"
   		    ];
 
