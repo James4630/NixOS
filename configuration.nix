@@ -232,12 +232,10 @@
   				};
   			};
   			soulseek.description = ''
-  			Just started with selfhosting Music
-  			All tracks are in FLAC 16 bit/44.1kHz except a few niche releases only available as mp3
+  			Most tracks are in FLAC 16 bit/44.1kHz
 
-  			[Software Stack]
   			lidarr + soularr + slskd + navidrome + symfonium
-  			Fully serverside so sadly no Musicbrainz Picard for me :( (i could mount the network drive from my server tough)
+  			
   			Waiting for Sonic Analysis on Navidrome via AudioMuse
   			'';
   			shares.directories = [ "/mnt/storage/music" ];
