@@ -535,7 +535,7 @@
   			"lewis" = {
   				"comment" = "HDD von Lewis";
   				"path" = "/mnt/lewis-hdd";
-  				"hosts allow" = "192.168.178.10 192.168.178.60 192.168.178.200 192.168.178.56";
+  				"hosts allow" = "192.168.178.10 192.168.178.60 192.168.178.200 192.168.178.56 192.168.178.164";
   				"browseable" = "yes";
   				"read only" = "no";
   				"guest ok" = "yes";
@@ -551,8 +551,7 @@
   		enable = true;
   		openFirewall = true;
   	};
-  	
-  	
+  		
   };
   
   users = {
