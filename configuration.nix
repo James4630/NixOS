@@ -50,6 +50,7 @@
   		kid3-cli
   		progress
   		git
+  		dotnet-sdk_9
 
   		jellyfin
   		jellyfin-web
@@ -117,6 +118,9 @@
   		'';
   		virtualHosts."prowlarr.elliotkirby.de".extraConfig = ''
   		  reverse_proxy :9696
+  		'';
+  		virtualHosts."rdtc.elliotkirby.de".extraConfig = ''
+  		  reverse_proxy :6500
   		'';
   		virtualHosts."bitwarden.elliotkirby.de".extraConfig = ''
   		  encode zstd gzip
@@ -605,6 +609,12 @@
   			group = "smb-lewis";
   			isSystemUser = true;
   		};
+  		rdtc = {
+  			group = "rdtc";
+  			isSystemUser = true;
+  			home = "/var/lib/rdtc";
+  			createHome = true;
+  		};
   		immich.extraGroups = [ "video" "render" ];
   		jellyfin.extraGroups = [ "video" "render" ];
   		caddy.extraGroups = [ "seafile" ];
@@ -612,6 +622,7 @@
   	
   	groups = {
   		"smb-lewis" = {};
+  		"rdtc" = {};
   		music.members = [ "navidrome" "slskd" "lidarr" ];
   		media.members = [ "jellyfin" "radarr" "sonarr" ];
   		beets.members = [ "james" "lidarr" ];
@@ -666,6 +677,13 @@
   			WorkingDirectory = "/home/james/system-config/pkgs/soularr";
   			ExecStart = "${pkgs.sudo}/bin/sudo bash /home/james/system-config/scripts/start-soularr.sh";
   			Environment = "PATH=/run/current-system/sw/bin:/run/current-system/sw/sbin:/run/current-system/profile/bin";
+  		};
+  	};
+  	"rdtc" = {
+  		serviceConfig = {
+  			User = "rdtc";
+  			WorkingDirectory = "/var/lib/rdtc/rdtc";
+  			ExecStart = "${pkgs.dotnet-sdk_9}/bin/dotnet /var/lib/rdtc/rdtc/RdtClient.Web.dll";
   		};
   	};
   };
