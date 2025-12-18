@@ -49,6 +49,10 @@
   		kid3-cli
   		progress
   		git
+
+  		jellyfin
+  		jellyfin-web
+  		jellyfin-ffmpeg
   	];
   	variables = {
   		EDITOR = "micro";
@@ -97,6 +101,9 @@
   		'';
   		virtualHosts."ntfy.elliotkirby.de".extraConfig = ''
   		  reverse_proxy :2586
+  		'';
+  		virtualHosts."jellyfin.elliotkirby.de".extraConfig = ''
+  		  reverse_proxy :8096
   		'';
   		virtualHosts."bitwarden.elliotkirby.de".extraConfig = ''
   		  encode zstd gzip
@@ -551,6 +558,11 @@
   		enable = true;
   		openFirewall = true;
   	};
+
+  	jellyfin = {
+  		enable = true;
+  	};
+  	#seerr
   		
   };
   
@@ -561,6 +573,7 @@
   			isSystemUser = true;
   		};
   		immich.extraGroups = [ "video" "render" ];
+  		jellyfin.extraGroups = [ "video" "render" ];
   		caddy.extraGroups = [ "seafile" ];
   	};
   	
@@ -574,7 +587,9 @@
   hardware.graphics = {
   	enable = true;
   	extraPackages = with pkgs; [
+  		intel-ocl
   		intel-vaapi-driver
+  		libva-vdpau-driver
   	];
   };
 
@@ -670,7 +685,7 @@
   };
 
 
-  networking.firewall.allowedTCPPorts = [ 80 443 25565 25566 25575 25577 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 25565 25566 25575 25577 7359 ];
 
 
   system.stateVersion = "25.05"; # Did you read the comment?
