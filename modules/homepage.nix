@@ -134,18 +134,27 @@
 								};
 							}
 							{
-								Jellyfin = {
-									description = "Movies and Shows";
-									icon = "jellyfin";
-									href = "https://jellyfin.elliotkirby.de";
-								};
-							}
-							{
 								Seafile = {
 									description = "Cloud Storage";
 									icon = "seafile";
 									href = "https://seafile.elliotkirby.de/";
 									#ping = "seafile.elliotkirby.de";
+								};
+							}
+							{
+								Jellyfin = {
+									description = "Movies and Shows";
+									icon = "jellyfin";
+									href = "https://jellyfin.elliotkirby.de";
+									widget = {
+										type = "jellyfin";
+										url = "https://jellyfin.elliotkirby.de";
+										key = "ac3b765a11614a05bdabeac94810606e";
+										enableBlocks = true;
+										fields = [ "movies" "series" "episodes" ];
+										enableUser = true;
+										showEpisodeNumber = true;
+									};
 								};
 							}
 							{
