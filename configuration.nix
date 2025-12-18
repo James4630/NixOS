@@ -603,6 +603,7 @@
   	groups = {
   		"smb-lewis" = {};
   		music.members = [ "navidrome" "slskd" "lidarr" ];
+  		media.members = [ "jellyfin" "radarr" "sonarr" ];
   		beets.members = [ "james" "lidarr" ];
   	};
   };
@@ -639,6 +640,11 @@
   		});
   	};
   	jellyfin = {
+  		serviceConfig = (readWriteOverwrite.serviceConfig // {
+  			ReadWritePaths = lib.mkForce [ "/mnt/storage/media" ];
+  		});
+  	};
+  	radarr = {
   		serviceConfig = (readWriteOverwrite.serviceConfig // {
   			ReadWritePaths = lib.mkForce [ "/mnt/storage/media" ];
   		});
