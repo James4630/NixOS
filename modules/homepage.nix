@@ -29,6 +29,10 @@
 				Media_c = {
 					style = "row";
 					columns = 2;
+					Media = {
+						style = "row";
+						columns = 2;
+					};
 				};
 				Router = {};
 				Services = {};
@@ -127,6 +131,13 @@
 									icon = "immich";
 									href = "https://immich.elliotkirby.de/";
 									#ping = "immich.elliotkirby.de";
+								};
+							}
+							{
+								Jellyfin = {
+									description = "Music Streaming";
+									icon = "jellyfin";
+									href = "https://jellyfin.elliotkirby.de";
 								};
 							}
 							{
