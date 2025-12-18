@@ -106,6 +106,9 @@
   		virtualHosts."jellyfin.elliotkirby.de".extraConfig = ''
   		  reverse_proxy :8096
   		'';
+  		virtualHosts."jellyseerr.elliotkirby.de".extraConfig = ''
+  		  reverse_proxy :5055
+  		'';
   		virtualHosts."bitwarden.elliotkirby.de".extraConfig = ''
   		  encode zstd gzip
 
@@ -563,7 +566,10 @@
   	jellyfin = {
   		enable = true;
   	};
-  	#seerr
+  	
+  	jellyseerr = {
+  		enable = true;
+  	};
   		
   };
   
