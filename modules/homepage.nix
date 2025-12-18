@@ -165,8 +165,8 @@
 									widget = {
 										type = "navidrome";
 										url = "https://navidrome.elliotkirby.de";
-										user = "James";
-										token = "61adc6f4b110030605c4208573e700b9";
+										user = "homepage";
+										token = "d06347496e9a68e70b1e044dfa60b812";
 										salt = "R1abG9";
 									};
 								};
