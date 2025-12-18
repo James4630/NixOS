@@ -14,6 +14,7 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
   	"minecraft-server"
+  	"intel-ocl"
   ];
   
   boot.loader.systemd-boot.enable = true;
