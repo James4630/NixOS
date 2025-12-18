@@ -109,6 +109,12 @@
   		virtualHosts."jellyseerr.elliotkirby.de".extraConfig = ''
   		  reverse_proxy :5055
   		'';
+  		virtualHosts."radarr.elliotkirby.de".extraConfig = ''
+  		  reverse_proxy :7878
+  		'';
+  		virtualHosts."sonarr.elliotkirby.de".extraConfig = ''
+  		  reverse_proxy :8989
+  		'';
   		virtualHosts."bitwarden.elliotkirby.de".extraConfig = ''
   		  encode zstd gzip
 
@@ -569,6 +575,16 @@
   	
   	jellyseerr = {
   		enable = true;
+  	};
+
+  	radarr = {
+  		enable = true;
+  		#port: 7878
+  	};
+
+  	sonarr = {
+  		enable = true;
+  		#port: 8989
   	};
   		
   };
