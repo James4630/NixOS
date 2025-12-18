@@ -113,11 +113,15 @@
 									widget = {
 										type = "calendar";
 										showTime = true;
-										integrations = {
-											type = "lidarr";
-											service_group = "arr";
-											service_name = "Lidarr";
-										};
+										#integrations = {
+										#	type = "lidarr";
+										#	service_group = "arr";
+										#	service_name = "Lidarr";
+										#	params = {
+										#		unmonitored = true;
+										#	};
+										#	baseUrl = "https://lidarr.elliotkirby.de";
+										#};
 									};
 								};
 							}
