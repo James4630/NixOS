@@ -135,7 +135,7 @@
 							}
 							{
 								Jellyfin = {
-									description = "Music Streaming";
+									description = "Movies and Shows";
 									icon = "jellyfin";
 									href = "https://jellyfin.elliotkirby.de";
 								};
