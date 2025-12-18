@@ -591,6 +591,11 @@
   	prowlarr = {
   		enable = true;
   	};
+
+  	flaresolverr = {
+  		enable = true;
+  		openFirewall = true;
+  	};
   	
   };
   
