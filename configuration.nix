@@ -616,6 +616,11 @@
   			ReadWritePaths = lib.mkForce [ "/mnt/storage/slskd/downloads" ];
   		});
   	};
+  	jellyfin = {
+  		serviceConfig = (readWriteOverwrite.serviceConfig // {
+  			ReadWritePaths = lib.mkForce [ "/mnt/storage/media" ];
+  		});
+  	};
   	"soularr" = {
   		serviceConfig = {
   			Type = "oneshot";
