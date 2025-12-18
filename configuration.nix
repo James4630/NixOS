@@ -115,6 +115,9 @@
   		virtualHosts."sonarr.elliotkirby.de".extraConfig = ''
   		  reverse_proxy :8989
   		'';
+  		virtualHosts."prowlarr.elliotkirby.de".extraConfig = ''
+  		  reverse_proxy :9696
+  		'';
   		virtualHosts."bitwarden.elliotkirby.de".extraConfig = ''
   		  encode zstd gzip
 
@@ -579,14 +582,16 @@
 
   	radarr = {
   		enable = true;
-  		#port: 7878
   	};
 
   	sonarr = {
   		enable = true;
-  		#port: 8989
   	};
-  		
+
+  	prowlarr = {
+  		enable = true;
+  	};
+  	
   };
   
   users = {
