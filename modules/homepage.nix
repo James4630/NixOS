@@ -231,8 +231,9 @@
 							href = "https://lidarr.elliotkirby.de";
 							widget = {
 								type = "lidarr";
-								url = "lidarr.elliotkirby.de";
+								url = "https://lidarr.elliotkirby.de";
 								key = "0aef1fe725b24d9abe5c792beaebdd73";
+								fields = [ "wanted" "artists" ];
 							};
 						};
 					}
