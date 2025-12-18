@@ -593,8 +593,8 @@
   	};
 
   	flaresolverr = {
-  		enable = true;
-  		openFirewall = true;
+  		enable = false;
+  		#openFirewall = true;
   	};
   	
   };
