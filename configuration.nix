@@ -672,6 +672,11 @@
   			ReadWritePaths = lib.mkForce [ "/mnt/storage/media" ];
   		});
   	};
+  	sonarr = {
+  		serviceConfig = (readWriteOverwrite.serviceConfig // {
+  			ReadWritePaths = lib.mkForce [ "/mnt/storage/media" ];
+  		});
+  	};
   	"soularr" = {
   		serviceConfig = {
   			Type = "oneshot";
