@@ -610,7 +610,7 @@
   			isSystemUser = true;
   		};
   		rdtc = {
-  			group = "rdtc";
+  			group = "torrents";
   			isSystemUser = true;
   			home = "/var/lib/rdtc";
   			createHome = true;
@@ -622,9 +622,10 @@
   	
   	groups = {
   		"smb-lewis" = {};
-  		"rdtc" = {};
+  		"torrents" = {};
   		music.members = [ "navidrome" "slskd" "lidarr" ];
   		media.members = [ "jellyfin" "radarr" "sonarr" ];
+  		#torrents.members = [ "rdtc" ];
   		beets.members = [ "james" "lidarr" ];
   	};
   };
