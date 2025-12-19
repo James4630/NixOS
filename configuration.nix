@@ -680,9 +680,9 @@
   		};
   	};
   	"rdtc" = {
+  		wantedBy = [ "multi-user.target" ];
   		serviceConfig = {
   			User = "rdtc";
-  			wantedBy = ["multi-user.target"];
   			WorkingDirectory = "/var/lib/rdtc/rdtc";
   			ExecStart = "${pkgs.dotnet-sdk_9}/bin/dotnet /var/lib/rdtc/rdtc/RdtClient.Web.dll";
   		};
