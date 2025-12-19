@@ -36,7 +36,11 @@
 				};
 				Router = {};
 				Services = {};
-				arr = {};
+				Downloader = {};
+				arr = {
+					style = "row";
+					columns = 2;
+				};
 				Web = {
 					iconsOnly = true;
 					style = "row";
@@ -212,6 +216,10 @@
 							href = "https://bin.elliotkirby.de";
 						};
 					}
+				];
+			}
+			{
+				Downloader = [
 					{
 						slskd = {
 							description = "slsk server/client for automated downloads";
@@ -222,6 +230,13 @@
 								url = "https://slskd.elliotkirby.de";
 								key = "WVxrJQ349lG9tLVrk7/OTILKRGWCE+0ldQrRu56KCdVUVhSHEGmcjd1luJqIXY5l";
 							};
+						};
+					}
+					{
+						rdtc = {
+							description = "RealDebrid Download/Torrent Client. Controlled via qBittorrent API";
+							icon = "rdt-client";
+							href = "https://rdtc.elliotkirby.de";
 						};
 					}
 				];
@@ -238,6 +253,45 @@
 								url = "https://lidarr.elliotkirby.de";
 								key = "0aef1fe725b24d9abe5c792beaebdd73";
 								fields = [ "wanted" "artists" ];
+							};
+						};
+					}
+					{
+						Radarr = {
+							description = "Movie libary manager";
+							icon = "radarr";
+							href = "radarr.elliotkirby.de";
+							widget = {
+								type = "radarr";
+								url = "https://radarr.elliotkirby.de";
+								key = "";
+								fields = [];
+							};
+						};
+					}
+					{
+						Sonarr = {
+							description = "TV Show libary manager";
+							icon = "sonarr";
+							href = "sonarr.elliotkirby.de";
+							widget = {
+								type = "sonarr";
+								url = "https://sonarr.elliotkirby.de";
+								key = "";
+								fields = [];
+							};
+						};
+					}
+					{
+						Prowlarr = {
+							description = "Indexer/Tracker manager";
+							icon = "prowlarr";
+							href = "prowlarr.elliotkirby.de";
+							widget = {
+								type = "prowlarr";
+								url = "https://prowlarr.elliotkirby.de";
+								key = "";
+								fields = [];
 							};
 						};
 					}

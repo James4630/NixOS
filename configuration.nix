@@ -101,9 +101,6 @@
   		virtualHosts."bin.elliotkirby.de".extraConfig = ''
   		  reverse_proxy :8087
   		'';
-  		virtualHosts."ntfy.elliotkirby.de".extraConfig = ''
-  		  reverse_proxy :2586
-  		'';
   		virtualHosts."jellyfin.elliotkirby.de".extraConfig = ''
   		  reverse_proxy :8096
   		'';
