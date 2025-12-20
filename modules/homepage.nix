@@ -101,8 +101,22 @@
 			}
 			{
 				resources = {
+					label = "System";
+					disk = [ "/" ];
+					expanded = true;
+				};
+			}
+			{
+				resources = {
 					label = "Storage";
-					disk = [ "/" "/mnt/storage"];
+					disk = [ "/mnt/storage" ];
+					expanded = true;
+				};
+			}
+			{
+				resources = {
+					label = "Media";
+					disk = [ "/mnt/media" ];
 					expanded = true;
 				};
 			}
