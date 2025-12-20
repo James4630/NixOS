@@ -127,15 +127,35 @@
 									widget = {
 										type = "calendar";
 										showTime = true;
-										#integrations = {
-										#	type = "lidarr";
-										#	service_group = "arr";
-										#	service_name = "Lidarr";
-										#	params = {
-										#		unmonitored = true;
-										#	};
-										#	baseUrl = "https://lidarr.elliotkirby.de";
-										#};
+										integrations = [
+											{
+												type = "lidarr";
+												service_group = "arr";
+												service_name = "Lidarr";
+												params = {
+													unmonitored = true;
+												};
+												baseUrl = "https://lidarr.elliotkirby.de";
+											}
+											{
+												type = "radarr";
+												service_group = "arr";
+												service_name = "Radarr";
+												params = {
+													unmonitored = true;
+												};
+												baseUrl = "https://radarr.elliotkirby.de";
+											}
+											{
+												type = "sonarr";
+												service_group = "arr";
+												service_name = "Sonarr";
+												params = {
+													unmonitored = true;
+												};
+												baseUrl = "https://sonarr.elliotkirby.de";
+											}
+										];
 									};
 								};
 							}
