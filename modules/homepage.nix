@@ -29,21 +29,31 @@
 				Media_c = {
 					style = "row";
 					columns = 2;
+					tab = "Overview";
+					header = false;
 					Media = {
 						style = "row";
 						columns = 2;
 					};
 				};
-				Router = {};
-				Services = {};
-				Downloader = {};
+				Router = {
+					tab = "Overview";
+				};
+				Services = {
+					tab = "Overview";
+				};
 				arr = {
 					style = "row";
 					columns = 2;
+					tab = "arr";
+				};
+				downloader = {
+					tab = "arr";
 				};
 				Web = {
 					iconsOnly = true;
 					style = "row";
+					tab = "Overview";
 				};
 			};
 		};
@@ -219,7 +229,7 @@
 				];
 			}
 			{
-				Downloader = [
+				downloader = [
 					{
 						slskd = {
 							description = "slsk server/client for automated downloads";
@@ -244,15 +254,16 @@
 			{
 				arr = [
 					{
-						Lidarr = {
-							description = "automated music manager";
-							icon = "lidarr";
-							href = "https://lidarr.elliotkirby.de";
+						Sonarr = {
+							description = "TV Show libary manager";
+							icon = "sonarr";
+							href = "sonarr.elliotkirby.de";
 							widget = {
-								type = "lidarr";
-								url = "https://lidarr.elliotkirby.de";
-								key = "0aef1fe725b24d9abe5c792beaebdd73";
-								fields = [ "wanted" "artists" ];
+								type = "sonarr";
+								url = "https://sonarr.elliotkirby.de";
+								key = "9f302253ee354191ab4a83185b736592";
+								fields = [ "wanted" "queued" "series" ];
+								enableQueue = true;
 							};
 						};
 					}
@@ -271,16 +282,15 @@
 						};
 					}
 					{
-						Sonarr = {
-							description = "TV Show libary manager";
-							icon = "sonarr";
-							href = "sonarr.elliotkirby.de";
+						Lidarr = {
+							description = "automated music manager";
+							icon = "lidarr";
+							href = "https://lidarr.elliotkirby.de";
 							widget = {
-								type = "sonarr";
-								url = "https://sonarr.elliotkirby.de";
-								key = "9f302253ee354191ab4a83185b736592";
-								fields = [ "wanted" "queued" "series" ];
-								enableQueue = true;
+								type = "lidarr";
+								url = "https://lidarr.elliotkirby.de";
+								key = "0aef1fe725b24d9abe5c792beaebdd73";
+								fields = [ "wanted" "artists" ];
 							};
 						};
 					}
