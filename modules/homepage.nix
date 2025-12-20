@@ -264,8 +264,9 @@
 							widget = {
 								type = "radarr";
 								url = "https://radarr.elliotkirby.de";
-								key = "";
-								fields = [];
+								key = "6b7b17e08b7c40768024757ea5362605";
+								fields = [ "wanted" "missing" "queued" "movies" ];
+								enableQueue = true;
 							};
 						};
 					}
@@ -277,8 +278,9 @@
 							widget = {
 								type = "sonarr";
 								url = "https://sonarr.elliotkirby.de";
-								key = "";
-								fields = [];
+								key = "9f302253ee354191ab4a83185b736592";
+								fields = [ "wanted" "queued" "series" ];
+								enableQueue = true;
 							};
 						};
 					}
@@ -290,8 +292,8 @@
 							widget = {
 								type = "prowlarr";
 								url = "https://prowlarr.elliotkirby.de";
-								key = "";
-								fields = [];
+								key = "740017f53b0f409db45e8c909d698982";
+								fields = [ "numberOfGrabs" "numberOfQueries" "numberOfFailGrabs" "numberOfFailQueries" ];
 							};
 						};
 					}
