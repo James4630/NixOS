@@ -119,6 +119,9 @@
   		virtualHosts."rdtc.elliotkirby.de".extraConfig = ''
   		  reverse_proxy :6500
   		'';
+  		virtualHosts."bazarr.elliotkirby.de".extraConfig = ''
+  		  reverse_proxy :6767
+  		'';
   		virtualHosts."bitwarden.elliotkirby.de".extraConfig = ''
   		  encode zstd gzip
 
@@ -593,9 +596,8 @@
   		enable = true;
   	};
 
-  	flaresolverr = {
-  		enable = false;
-  		#openFirewall = true;
+  	bazarr = {
+  		enable = true;
   	};
   	
   };
