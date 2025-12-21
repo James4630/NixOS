@@ -123,7 +123,7 @@
   		  reverse_proxy :6767
   		'';
   		virtualHosts."gotify.elliotkirby.de".extraConfig = ''
-  		  reverse_proxy :64
+  		  reverse_proxy :26269
   		'';
   		virtualHosts."bitwarden.elliotkirby.de".extraConfig = ''
   		  encode zstd gzip
@@ -606,7 +606,7 @@
   	gotify = {
   		enable = true;
   		environment = {
-  			GOTIFY_SERVER_PORT = 64;
+  			GOTIFY_SERVER_PORT = 26269;
   		};
   	};
   	
