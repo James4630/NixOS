@@ -51,6 +51,7 @@
   		progress
   		git
   		dotnet-sdk_9
+  		ncdu
 
   		jellyfin
   		jellyfin-web
