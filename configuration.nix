@@ -122,6 +122,9 @@
   		virtualHosts."bazarr.elliotkirby.de".extraConfig = ''
   		  reverse_proxy :6767
   		'';
+  		virtualHosts."gotify.elliotkirby.de".extraConfig = ''
+  		  reverse_proxy :69
+  		'';
   		virtualHosts."bitwarden.elliotkirby.de".extraConfig = ''
   		  encode zstd gzip
 
@@ -598,6 +601,13 @@
 
   	bazarr = {
   		enable = true;
+  	};
+
+  	gotify = {
+  		enable = true;
+  		environment = {
+  			GOTIFY_SERVER_PORT = 69;
+  		};
   	};
   	
   };
