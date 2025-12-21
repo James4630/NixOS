@@ -260,6 +260,13 @@
 							href = "https://bin.elliotkirby.de";
 						};
 					}
+					{
+						Gotify = {
+							description = "push notifications service";
+							icon = "gotify";
+							href = "https://gotify.elliotkirby.de";
+						};
+					}
 				];
 			}
 			{
