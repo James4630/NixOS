@@ -674,17 +674,17 @@
   	};
   	jellyfin = {
   		serviceConfig = (readWriteOverwrite.serviceConfig // {
-  			ReadWritePaths = lib.mkForce [ "/mnt/media" ];
+  			ReadWritePaths = lib.mkForce [ "/mnt/media" "/mnt/storage/media" ];
   		});
   	};
   	radarr = {
   		serviceConfig = (readWriteOverwrite.serviceConfig // {
-  			ReadWritePaths = lib.mkForce [ "/mnt/media" ];
+  			ReadWritePaths = lib.mkForce [ "/mnt/media" "/mnt/storage/media" ];
   		});
   	};
   	sonarr = {
   		serviceConfig = (readWriteOverwrite.serviceConfig // {
-  			ReadWritePaths = lib.mkForce [ "/mnt/media" ];
+  			ReadWritePaths = lib.mkForce [ "/mnt/media" "/mnt/storage/media" ];
   		});
   	};
   	"soularr" = {
