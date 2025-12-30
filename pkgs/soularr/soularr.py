@@ -18,6 +18,15 @@ import music_tag
 import slskd_api
 from pyarr import LidarrAPI
 
+import requests
+
+
+def send_msg(title,msg):
+    resp = requests.post('http://127.0.0.1:26269/message?token=AcAzT5-wfJ4Z4xg', json={
+        "message": msg,
+        "priority": 0,
+        "title": title
+    })
 
 class EnvInterpolation(configparser.ExtendedInterpolation):
     """
@@ -294,6 +303,7 @@ def search_and_download(grab_list, query, tracks, track, artist_name, release):
                             directory = slskd.users.directory(username = username, directory = file_dir)
                     except Exception:
                         logger.info(f"Error getting directory from user: \"{username}\"\n{traceback.format_exc()}")
+                        send_msg("Album Search","Error getting directory from user: \"{username}\"\n{traceback.format_exc()}")
                         continue
 
                     tracks_info = album_track_num(directory)
@@ -321,6 +331,7 @@ def search_and_download(grab_list, query, tracks, track, artist_name, release):
                                 return True
                             except Exception:
                                 logger.warning(f"Error enqueueing tracks! Adding {username} to ignored users list.")
+                                send_msg("Album Search","Error enqueueing tracks! Adding {username} to ignored users list.")
                                 downloads = slskd.transfers.get_downloads(username)
 
                                 for cancel_directory in downloads["directories"]:
@@ -361,6 +372,7 @@ def grab_most_wanted(albums):
 
         if enable_search_denylist and is_search_denylisted(search_denylist, album_id, max_search_failures):
             logger.info(f"Skipping denylisted album: {artist_name} - {album['title']} (ID: {album_id})")
+            send_msg("Album Search","Skipping denylisted album: {artist_name} - {album['title']} (ID: {album_id})")
             continue
 
         release = choose_release(album_id, artist_name)
@@ -424,6 +436,7 @@ def grab_most_wanted(albums):
                     file.write(failure_string)
             else:
                 logger.error(f"Failed to find match for: {album['title']} from artist: {artist_name}")
+                send_msg("Album Search","Failed to find match for: {album['title']} from artist: {artist_name}")
 
             failed_searches += 1
 
@@ -438,6 +451,7 @@ def grab_most_wanted(albums):
             logger.info(f"Username: {username} Directory: {dir['directory']}")
     logger.info("-------------------")
     logger.info(f"Waiting for downloads... monitor at: {''.join([slskd_host_url, slskd_url_base, 'downloads'])}")
+    send_msg("Album Search","Waiting for downloads...")
 
     time_count = 0
 
@@ -450,6 +464,7 @@ def grab_most_wanted(albums):
                 downloads = slskd.transfers.get_downloads(username)
             except Exception:
                 logger.info(f"Error getting directory from user: \"{username}\"\n{traceback.format_exc()}")
+                send_msg("Album Search","Error getting directory from user: \"{username}\"\n{traceback.format_exc()}")
                 continue
 
             for directory in downloads["directories"]:
@@ -467,6 +482,7 @@ def grab_most_wanted(albums):
                     # If we have errored files, cancel and remove ALL files so we can retry next time
                     if len(errored_files) > 0:
                         logger.error(f"FAILED: Username: {username} Directory: {dir['name']}")
+                        send_msg("Album Search","FAILED: Username: {username} Directory: {dir['name']}")
                         cancel_and_delete(artist_folder['dir'], artist_folder['username'], directory["files"])
                         grab_list.remove(artist_folder)
                     elif len(pending_files) > 0:
@@ -474,6 +490,7 @@ def grab_most_wanted(albums):
 
         if unfinished == 0:
             logger.info("All tracks finished downloading!")
+            send_msg("Album Search","All tracks finished downloading!")
             time.sleep(5)
             break
 
@@ -490,10 +507,12 @@ def grab_most_wanted(albums):
 
                     if len(pending_files) > 0:
                         logger.error(f"Removing Stalled Download: Username: {username} Directory: {dir['name']}")
+                        send_msg("Album Search","Removing Stalled Download: Username: {username} Directory: {dir['name']}")
                         cancel_and_delete(artist_folder['dir'], artist_folder['username'], directory["files"])
                         grab_list.remove(artist_folder)
 
             logger.info("All tracks finished downloading!")
+            send_msg("Album Search","All tracks finished downloading!")
             time.sleep(5)
             break
 
@@ -548,6 +567,7 @@ def grab_most_wanted(albums):
         command = lidarr.post_command(name = 'DownloadedAlbumsScan', path = download_dir)
         commands.append(command)
         logger.info(f"Starting Lidarr import for: {artist_folder} ID: {command['id']}")
+        send_msg("Album Search","Starting Lidarr import for: {artist_folder} ID: {command['id']}")
 
     while True:
         completed_count = 0
@@ -593,6 +613,7 @@ def move_failed_import(src_path):
     if os.path.exists(folder_name):
         shutil.move(folder_name, target_path)
         logger.info(f"Failed import moved to: {target_path}")
+        send_msg("Album Search","Failed import moved to: {target_path}")
 
 
 def is_docker():
@@ -771,6 +792,7 @@ denylist_file_path = os.path.join(args.var_dir, "search_denylist.json")
 
 if not is_docker() and os.path.exists(lock_file_path) and args.lock_file:
     logger.info(f"Soularr instance is already running.")
+    send_msg("Soularr","Lockfile exists. Exiting...")
     sys.exit(1)
 
 try:
@@ -858,23 +880,28 @@ try:
         sys.exit(0)
 
     if len(wanted_records) > 0:
+        send_msg("Soularr","Starting")
         try:
             failed = grab_most_wanted(wanted_records)
         except Exception:
             logger.error(traceback.format_exc())
             logger.error("\n Fatal error! Exiting...")
+            send_msg("Soularr","Fatal error!")
 
             if os.path.exists(lock_file_path) and not is_docker():
                 os.remove(lock_file_path)
             sys.exit(0)
         if failed == 0:
             logger.info("Soularr finished. Exiting...")
+            send_msg("Soularr","Finished")
             slskd.transfers.remove_completed_downloads()
         else:
             if remove_wanted_on_failure:
                 logger.info(f'{failed}: releases failed to find a match in the search results. View "failure_list.txt" for list of failed albums.')
+                send_msg("Album Search",'{failed}: releases failed to find a match in the search results. View "failure_list.txt" for list of failed albums.')
             else:
                 logger.info(f"{failed}: releases failed to find a match in the search results and are still wanted.")
+                send_msg("Album Search","{failed}: releases failed to find a match in the search results and are still wanted.")
             slskd.transfers.remove_completed_downloads()
     else:
         logger.info("No releases wanted. Exiting...")

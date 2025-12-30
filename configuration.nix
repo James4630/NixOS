@@ -710,8 +710,8 @@
   	"soularr" = {
   		wantedBy = [ "timers.target" ];
   		  timerConfig = {
-  		  	OnBootSec = "15m";
-  		  	OnUnitActiveSec = "30m";
+  		  	OnBootSec = "10m";
+  		  	OnUnitActiveSec = "15m";
   		  	AccuracySec = "1m";
   		  	Persistend = false;
   		  	Unit = "soularr.service";
