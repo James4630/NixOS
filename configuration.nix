@@ -209,7 +209,7 @@
   			};
   		};
 
-  		dataDir = "/mnt/storage/seafile";
+  		dataDir = "/mnt/storage/seafile/data";
 
   		gc = {
   			enable = true;
