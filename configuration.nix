@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./modules/homepage.nix
       inputs.nix-minecraft.nixosModules.minecraft-servers
+      "${inputs.nixpkgs-2505}/nixos/modules/services/misc/seafile.nix"
     ];
 
   nixpkgs.overlays = [
@@ -68,7 +69,6 @@
   };
 
 
-  #services
   services = {
   
   	openssh.enable = true;
@@ -190,6 +190,7 @@
   	};
 
   	seafile = {
+  		#
   		enable = true;
 
   		adminEmail = "mail@elliotkirby.de";
