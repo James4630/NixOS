@@ -6,7 +6,6 @@
       ./hardware-configuration.nix
       ./modules/homepage.nix
       inputs.nix-minecraft.nixosModules.minecraft-servers
-      "${inputs.nixpkgs-2505}/nixos/modules/services/misc/seafile.nix"
     ];
 
   nixpkgs.overlays = [

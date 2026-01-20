@@ -70,18 +70,34 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nixpkgs-2505": {
       "locked": {
-        "lastModified": 1767313136,
-        "narHash": "sha256-16KkgfdYqjaeRGBaYsNrhPRRENs0qzkQVUooNHtoy2w=",
+        "lastModified": 1765547550,
+        "narHash": "sha256-UuLAriMUKErddxIzf2ZzGrIwiu8jVe+hIg30V4A+gEI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ac62194c3917d5f474c1a844b6fd6da2db95077d",
+        "rev": "155c64ac00715bb0bd14500733fd3bf4f3fd8648",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-25.05-small",
+        "repo": "nixpkgs",
+        "rev": "155c64ac00715bb0bd14500733fd3bf4f3fd8648",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1768877948,
+        "narHash": "sha256-D+GLCmhxA9O69GViYl48lSvp/Dr/Ohy5/onXVPwY6rI=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "43b2e61c9d09cf6c1c9c192fe6da08accc9bfb1d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.11-small",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -89,7 +105,8 @@
     "root": {
       "inputs": {
         "nix-minecraft": "nix-minecraft",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "nixpkgs-2505": "nixpkgs-2505"
       }
     },
     "systems": {
