@@ -188,34 +188,34 @@
   		};
   	};
 
-  	seafile = {
-  		#
-  		enable = true;
-
-  		adminEmail = "mail@elliotkirby.de";
-  		initialAdminPassword = "change later";
-
-  		ccnetSettings.General = {
-  			SERVICE_URL = "https://seafile.elliotkirby.de";
-
-  			#not workking
-  			#MEDIA_ROOT = "/var/lib/seafile/seahub/media_custom/";
-  		};
-
-  		seafileSettings = {
-  			fileserver = {
-  				host = "unix:/run/seafile/server.sock";#uses socket for communication instead of TCP (default from wiki)
-  				web_token_expire_time = 18000;
-  			};
-  		};
-
-  		dataDir = "/mnt/storage/seafile/data";
-
-  		gc = {
-  			enable = true;
-  			dates = [ "Sun 03:00:00" ];
-  		};
-  	};
+  	#seafile = {
+  	#	#
+  	#	enable = true;
+#
+ # 		adminEmail = "mail@elliotkirby.de";
+  #		initialAdminPassword = "change later";
+#
+ # 		ccnetSettings.General = {
+  #			SERVICE_URL = "https://seafile.elliotkirby.de";
+#
+ # 			#not workking
+  #			#MEDIA_ROOT = "/var/lib/seafile/seahub/media_custom/";
+  #		};
+#
+ # 		seafileSettings = {
+  #			fileserver = {
+  #				host = "unix:/run/seafile/server.sock";#uses socket for communication instead of TCP (default from wiki)
+  #				web_token_expire_time = 18000;
+  #			};
+  #		};
+#
+ # 		dataDir = "/mnt/storage/seafile/data";
+#
+ # 		gc = {
+  #			enable = true;
+  #			dates = [ "Sun 03:00:00" ];
+  #		};
+  #	};
 
   	navidrome = {
   		enable = true;
