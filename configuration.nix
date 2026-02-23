@@ -547,6 +547,14 @@
   				package = pkgs.velocityServers.velocity;
   				jvmOpts = "-XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15";
   			};
+
+  			public_proxy = {
+  				enable = true;
+  				autoStart = true;
+  				restart = "no";
+  				package = pkgs.velocityServers.velocity;
+  				jvmOpts = "-XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15";
+  			};
   		};
   	};
 

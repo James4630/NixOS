@@ -2,7 +2,7 @@
   description = "NixOS Config Flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
