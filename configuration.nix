@@ -125,6 +125,9 @@
   		virtualHosts."gotify.elliotkirby.de".extraConfig = ''
   		  reverse_proxy :26269
   		'';
+  		virtualHosts."filebrowser.elliotkirby.de".extraConfig = ''
+  		  reverse_proxy :9089
+  		'';
   		virtualHosts."bitwarden.elliotkirby.de".extraConfig = ''
   		  encode zstd gzip
 
@@ -715,6 +718,15 @@
   		enable = true;
   		environment = {
   			GOTIFY_SERVER_PORT = 26269;
+  		};
+  	};
+
+  	filebrowser = {
+  		enable = true;
+  		settings = {
+  			port = 9089;
+  			#address = "filebrowser.elliotkirby.de";
+  			root = "/mnt/media/movies";
   		};
   	};
   	
