@@ -23,7 +23,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
 
-  networking.hostName = "monolith";
+  networking.hostName = "lateralus";
 
   time.timeZone = "Europe/Berlin";
 

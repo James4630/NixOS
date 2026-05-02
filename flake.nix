@@ -8,7 +8,7 @@
 
   outputs = { self, nixpkgs, ...  }@inputs: {
     nixosConfigurations = {
-    	monolith = nixpkgs.lib.nixosSystem {
+    	lateralus = nixpkgs.lib.nixosSystem {
     		specialArgs = {inherit inputs;};
     		system = "x86_64-linux";
     		modules = [
