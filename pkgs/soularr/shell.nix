@@ -10,22 +10,25 @@ let
   ]);
   
   slskd_api = pkgs.python313Packages.buildPythonPackage rec {
-    pname = "slskd-api";
-    version = "0.1.5";
-    
-    src = pkgs.fetchPypi {
-      inherit pname version;
-      sha256 = "LmWP7bnK5IVid255qS2NGOmyKzGpUl3xsO5vi5uJI88=";
+      pname = "slskd_api";
+      version = "0.2.3";
+  
+      src = pkgs.fetchPypi {
+        inherit pname version;
+        hash = "sha256-cArINp1EuKJRxyL9wQo9B2Qs6h9L2t06sCzNxxpnYiU=";
+      };
+  
+      pyproject = true;
+  
+      build-system = with pkgs.python313Packages; [
+        setuptools
+        setuptools-git-versioning
+      ];
+
+      propagatedBuildInputs = with pkgs.python313Packages; [
+      	requests
+      ];
     };
-    
-    nativeBuildInputs = with pkgs.python313Packages; [
-      setuptools
-      wheel
-      pip
-      setuptools-git-versioning
-    ];
-    
-  };
 
 in
 

@@ -52,6 +52,7 @@
   		git
   		dotnet-sdk_9
   		ncdu
+  		rsync
 
   		jellyfin
   		jellyfin-web
