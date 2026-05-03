@@ -3,7 +3,7 @@
 		#https://gethomepage.dev/configs/
 		#https://search.nixos.org/options?channel=25.05&query=services.homepage-dashboard
 		enable = true;
-		allowedHosts = "elliotkirby.de,192.168.178.42:8082,localhost:8082,127.0.0.1:8082";
+		allowedHosts = "elliotkirby.de,192.168.178.62:8082,localhost:8082,127.0.0.1:8082";
 		
 		settings = {
 			title = "Home";

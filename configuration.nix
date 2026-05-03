@@ -896,7 +896,7 @@
   };
 
 
-  networking.firewall.allowedTCPPorts = [ 80 443 25565 25566 25575 25577 7359 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 25565 25566 25575 25577 7359 8082 ];
 
 
   system.stateVersion = "25.05"; # Did you read the comment?
