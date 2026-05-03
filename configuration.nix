@@ -27,6 +27,15 @@
 
   time.timeZone = "Europe/Berlin";
 
+  fileSystems."/mnt/media" =
+    { device = "/dev/disk/by-uuid/63e3e406-91c8-459c-81df-1e6b42b5a847";
+      fsType = "ext4";
+    };
+
+  fileSystems."/mnt/storage" =
+    { device = "/dev/disk/by-uuid/f2469dac-7c28-4baf-a5ce-3570d5601b8d";
+      fsType = "ext4";
+    };
 
   users.users.james = {
     isNormalUser = true;
