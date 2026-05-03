@@ -43,7 +43,7 @@
     packages = with pkgs; [
       tree
     ];
-    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICfFeHauUkhblLMcVmf4TsxMtEH1x3i2GVCedukfFPUZ archmx@archercamp" ];
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICfFeHauUkhblLMcVmf4TsxMtEH1x3i2GVCedukfFPUZ archmx@archercamp" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPRY5jyOT51rXkv+HgkBWjeEp3ERtugn3/r9pskfku2a james@monolith" ];
   };
 
 
@@ -81,6 +81,7 @@
   services = {
   
   	openssh.enable = true;
+  	openssh.settings.PermitRootLogin = "yes";
 
   	immich = {
   		enable = true;
