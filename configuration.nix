@@ -672,36 +672,6 @@
   		};
   	};
 
-  	samba = {
-  		enable = true;
-  		openFirewall = true;
-  		#securityType = "user";
-  		settings = {
-  			global = {
-  				"server string" = "monolith";
-  				"netbios name" = "monolith";
-  				"guest account" = "nobody";
-  			};
-  			"lewis" = {
-  				"comment" = "HDD von Lewis";
-  				"path" = "/mnt/lewis-hdd";
-  				"hosts allow" = "192.168.178.10 192.168.178.60 192.168.178.200 192.168.178.56 192.168.178.164";
-  				"browseable" = "yes";
-  				"read only" = "no";
-  				"guest ok" = "yes";
-  				"create mask" = "0644";
-  				"directory mask" = "0755";
-  				"force user" = "smb-lewis";
-  				"force group" = "smb-lewis";
-  			};
-  		};
-  	};
-
-  	samba-wsdd = {
-  		enable = true;
-  		openFirewall = true;
-  	};
-
   	jellyfin = {
   		enable = true;
   	};
