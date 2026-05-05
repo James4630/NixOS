@@ -149,39 +149,39 @@
   		'';
   		
   		#handle unix sockets for seafile
-  		  virtualHosts."seafile.elliotkirby.de".extraConfig = ''
-  		    handle_path /seafhttp* {
-  		      reverse_proxy {
-  		        to unix//run/seafile/server.sock
-  		        transport http {
-  		          dial_timeout 30s
-  		          read_timeout 18000s
-  		          write_timeout 18000s
-  		        }
-  		        header_up X-Forwarded-For {remote_host}
-  		        header_up X-Forwarded-Proto {scheme}
-  		      }
-  		    }
+  		  #virtualHosts."seafile.elliotkirby.de".extraConfig = ''
+  		  #  handle_path /seafhttp* {
+  		  #    reverse_proxy {
+  		  #      to unix//run/seafile/server.sock
+  		  #      transport http {
+  		  #        dial_timeout 30s
+  		  #        read_timeout 18000s
+  		  #        write_timeout 18000s
+  		  #      }
+  		  #      header_up X-Forwarded-For {remote_host}
+  		  #      header_up X-Forwarded-Proto {scheme}
+  		  #    }
+  		  #  }
   		
-  		    handle {
-  		      reverse_proxy {
-  		        to unix//run/seahub/gunicorn.sock
-  		        transport http {
-  		          dial_timeout 30s
-  		          read_timeout 1200s
-  		          write_timeout 1200s
-  		        }
-  		        header_up Host {host}
-  		        header_up X-Real-IP {remote_host}
-  		        header_up X-Forwarded-For {remote_host}
-  		        header_up X-Forwarded-Proto {scheme}
-  		      }
-  		    }
+  		  #  handle {
+  		  #    reverse_proxy {
+  		  #      to unix//run/seahub/gunicorn.sock
+  		  #      transport http {
+  		  #        dial_timeout 30s
+  		  #        read_timeout 1200s
+  		  #        write_timeout 1200s
+  		  #      }
+  		  #      header_up Host {host}
+  		  #      header_up X-Real-IP {remote_host}
+  		  #      header_up X-Forwarded-For {remote_host}
+  		  #      header_up X-Forwarded-Proto {scheme}
+  		  #    }
+  		  #  }
 
-  		    handle_path /seafdav* {
-  		    	reverse_proxy :8080/seafdav
-  		    }
-  		  '';
+  		  #  handle_path /seafdav* {
+  		  #  	reverse_proxy :8080/seafdav
+  		  #  }
+  		  #'';
   	};
 
   	nginx = {

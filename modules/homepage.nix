@@ -298,7 +298,7 @@
 						Sonarr = {
 							description = "TV Show libary manager";
 							icon = "sonarr";
-							href = "sonarr.elliotkirby.de";
+							href = "https://sonarr.elliotkirby.de";
 							widget = {
 								type = "sonarr";
 								url = "https://sonarr.elliotkirby.de";
@@ -312,7 +312,7 @@
 						Radarr = {
 							description = "Movie libary manager";
 							icon = "radarr";
-							href = "radarr.elliotkirby.de";
+							href = "https://radarr.elliotkirby.de";
 							widget = {
 								type = "radarr";
 								url = "https://radarr.elliotkirby.de";
@@ -339,7 +339,7 @@
 						Prowlarr = {
 							description = "Indexer/Tracker manager";
 							icon = "prowlarr";
-							href = "prowlarr.elliotkirby.de";
+							href = "https://prowlarr.elliotkirby.de";
 							widget = {
 								type = "prowlarr";
 								url = "https://prowlarr.elliotkirby.de";
