@@ -56,6 +56,7 @@
   		pciutils
   		micro
   		tmux
+  		tmuxPlugins.resurrect
   		beets
   		kid3-cli
   		progress
