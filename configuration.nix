@@ -51,6 +51,7 @@
   	systemPackages = with pkgs; [
   		fastfetch
   		wget
+  		htop
   		powertop
   		pciutils
   		micro
