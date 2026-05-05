@@ -787,8 +787,8 @@
   		serviceConfig = {
   			Type = "oneshot";
   			User = "root";
-  			WorkingDirectory = "/home/james/system-config/pkgs/soularr";
-  			ExecStart = "${pkgs.sudo}/bin/sudo bash /home/james/system-config/scripts/start-soularr.sh";
+  			WorkingDirectory = "/home/james/system-config/NixOS/pkgs/soularr";
+  			ExecStart = "${pkgs.sudo}/bin/sudo bash /home/james/system-config/NixOS/scripts/start-soularr.sh";
   			Environment = "PATH=/run/current-system/sw/bin:/run/current-system/sw/sbin:/run/current-system/profile/bin";
   		};
   	};
@@ -809,7 +809,7 @@
   		  	OnBootSec = "10m";
   		  	OnUnitActiveSec = "15m";
   		  	AccuracySec = "1m";
-  		  	Persistend = false;
+  		  	Persistent = false;
   		  	Unit = "soularr.service";
   		  };
   	};
