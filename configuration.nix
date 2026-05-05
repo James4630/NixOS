@@ -82,7 +82,7 @@
   services = {
   
   	openssh.enable = true;
-  	openssh.settings.PermitRootLogin = "yes";
+  	#openssh.settings.PermitRootLogin = "yes";
 
   	immich = {
   		enable = true;
