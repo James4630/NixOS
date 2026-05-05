@@ -716,10 +716,6 @@
   
   users = {
   	users = {
-  		"smb-lewis" = {
-  			group = "smb-lewis";
-  			isSystemUser = true;
-  		};
   		rdtc = {
   			group = "rdtc";
   			isSystemUser = true;
@@ -732,7 +728,6 @@
   	};
   	
   	groups = {
-  		"smb-lewis" = {};
   		"rdtc" = {};
   		"torrents" = {};
   		music.members = [ "navidrome" "slskd" "lidarr" ];
