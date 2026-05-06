@@ -55,8 +55,6 @@
   		powertop
   		pciutils
   		micro
-  		tmux
-  		tmuxPlugins.resurrect
   		beets
   		kid3-cli
   		progress
@@ -79,6 +77,17 @@
   	experimental-features = [ "nix-command" "flakes" ];
   };
 
+  programs = {
+  	tmux = {
+  		enable = true;
+  		terminal = "tmux-256color";
+  		clock24 = true;
+  		plugins = with pkgs.tmuxPlugins; [
+  			resurrect
+  		];
+  		extraConfig = "set -g @resurrect-capture-pane-contents 'on'";
+  	};
+  };
 
   services = {
   
