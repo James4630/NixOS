@@ -1,0 +1,17 @@
+{
+  "custom/notifications": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 2,
+    "exec": "makoctl mode | grep -qw do-not-disturb && echo '󰂛' || echo '󰂚'",
+    "on-click": "makoctl mode -t do-not-disturb",
+    "on-click-right": "makoctl dismiss --all",
+    "tooltip-format": "Left click: toggle DND\nRight click: dismiss all notifications"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10,
+    "show-passive-items": true
+  }
+}

@@ -1,0 +1,26 @@
+#tray-group,
+#tray-group box,
+#custom-notifications,
+#tray {
+  min-height: 28px;
+}
+
+#custom-notifications {
+  min-width: 28px;
+  padding: 0 8px;
+  margin: 0 2px;
+}
+
+#custom-notifications label {
+  min-width: 16px;
+  font-size: 16px;
+}
+
+#custom-notifications {
+  color: @secondary_fixed_dim;
+  background-color: transparent;
+}
+
+#custom-notifications label {
+  color: @secondary_fixed_dim;
+}
