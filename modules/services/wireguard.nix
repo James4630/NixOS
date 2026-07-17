@@ -36,8 +36,11 @@
 
 		networks."50-wg0" = {
 			matchConfig.Name = "wg0";
-			linkConfig.RequiredForOnline = false;
 			address = [ "192.168.178.202/24" "fd6c:9370:db23::202/64" ];
+			linkConfig = {
+				ActivationPolicy = "down";
+				RequiredForOnline = false;
+			};
 		};
 		
 	};
