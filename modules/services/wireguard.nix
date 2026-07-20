@@ -9,7 +9,6 @@
 	};
 	
 	systemd.network = {
-		enable = true;
 		wait-online.enable = false;
 
 		netdevs."50-wg0" = {
