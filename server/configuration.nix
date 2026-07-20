@@ -19,6 +19,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "lateralus";
+  networking.nameservers = [ "192.168.20.70" "1.1.1.1" ];
 
   time.timeZone = "Europe/Berlin";
 
