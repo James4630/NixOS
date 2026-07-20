@@ -342,7 +342,7 @@
 							href = "https://prowlarr.elliotkirby.de";
 							widget = {
 								type = "prowlarr";
-								url = "127.0.0.1:9696";
+								url = "https://prowlarr.elliotkirby.de";
 								key = "740017f53b0f409db45e8c909d698982";
 								fields = [ "numberOfGrabs" "numberOfQueries" "numberOfFailGrabs" "numberOfFailQueries" ];
 							};
